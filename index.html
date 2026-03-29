@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Esse site é uma calculadora">
+    <title>Calculadora 2DEGJ</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins";
+      }
+
+      h1 {
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        background-color: #EEF4ED;
+        color: #000807;
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+      }
+
+      main {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        flex: 100%;
+      }
+
+      header {
+        background-color: #ec1b3a;
+        color: #000807;
+        padding: 0;
+        margin: 0;
+        text-align: center;
+        border: 0.2rem solid;
+        box-shadow: 1px 5px 5px rgb(170, 170, 170);
+      }
+
+      form[id=calcform] {
+        text-align: center;
+      }
+      section[id="dvs"]{
+        text-align: center;
+        margin-bottom:15px;
+      }
+
+      input,
+      select,
+      button {
+        margin: 5px;
+        padding: 5px 10px;
+      }
+
+      footer {
+        text-align: center;
+        margin: 0;
+        padding: 0;
+       border: 0.2rem solid;
+        background-color:#ec1b3a;
+      }
+
+      #resultado {
+        margin-top: 20px;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1 id="cal2degj">Calculadora 2DEGJ </h1>
+    </header>
+    <br>
+    <br>
+    <main>
+      <form id="calcForm">
+        <label for="num1">Número 1:</label>
+        <input type="number" id="num1" required>
+        <br>
+        <label for="num2">Número 2:</label>
+        <input type="number" id="num2" required>
+        <br>
+        <label for="operacao">Operação:</label>
+        <select id="operacao">
+          <option value="soma">Soma</option>
+          <option value="subtracao">Diferença</option>
+          <option value="multiplicacao">Multiplicação</option>
+          <option value="divisao">Divisão</option>
+          <option value="resto">Resto da Divisão</option>
+        </select>
+        <br>
+        <button type="button" onclick="calcular()">Calcular</button>
+        <button type="button" onclick="limpar()">Limpar</button>
+      </form>
+      <div id="resultado"></div>
+      <script>
+        function calcular() {
+          const num1 = parseFloat(document.getElementById('num1').value);
+          const num2 = parseFloat(document.getElementById('num2').value);
+          const operacao = document.getElementById('operacao').value;
+          let resultado;
+          if (isNaN(num1) || isNaN(num2)) {
+            document.getElementById('resultado').innerHTML = "Por favor, digite números válidos.";
+            return;
+          }
+          switch (operacao) {
+            case 'soma':
+              resultado = num1 + num2;
+              mensagem = `A soma de ${num1} e ${num2} é = ${resultado}`;
+              break;
+            case 'subtracao':
+              resultado = num1 - num2;
+              mensagem = ` A diferença entre ${num1} e ${num2} é = ${resultado}`;
+              break;
+            case 'multiplicacao':
+              resultado = num1 * num2;
+              mensagem = `O produto de ${num1}  vezes ${num2} é = ${resultado}`;
+              break;
+            case 'divisao':
+              if (num2 == 0) {
+                mensagem = "Não é possivel divisão por zero";
+              } else {
+                resultado = (num1 / num2).toFixed(2);
+                mensagem = `A divisão de ${num1} por ${num2} é = ${resultado}`;
+              }
+              break;
+            case 'resto':
+              if (num2 == 0) {
+                mensagem = "Não é possivel divisão por zero";
+              } else {
+                resultado = num1 % num2;
+                mensagem = `O resto da divisão de ${num1} por ${num2} é = ${resultado}`;
+              }
+              break;
+            default:
+              mensagem = "Não vale essa opção";
+          }
+          document.getElementById('resultado').innerHTML = `
+														<strong>Resultado:</strong> ${resultado} 
+														<br>
+															<br>
+																<em>${mensagem}</em>`;
+        }
+        function limpar() {
+            document.getElementById('resultado').innerHTML = "";
+            document.getElementById('num1').value = "";
+            document.getElementById('num2').value = "";
+        }
+      </script>
+    </main>
+    <section class="rodape" id="contatos">
+      <br>
+      <br>
+      <footer>
+        <section id="dvs">
+            <strong><h2>Desenvolvedores</h2></strong>
+            <details>
+                <summary>Aperte Aqui</summary>
+                <br>
+                <p>Daniel Holanda</p>
+                <p>David Capulot</p>
+                <P>Eduardo Nespoli</P>
+                <p>Gabriel Fagundes</p>
+                <p>Julio Cesar </p>
+            </details>
+        </section>
+        <h3>Contatos dos Desenvolvedores</h3>
+        <br>
+        <p class="rodape">Email: 2DEGJ@imaginario.com</p>
+        <p class="rodape">Telefone: (21) 1234-5678</p>
+        <br>
+        <br>
+        <p class="rodape"> &copy;Todos os direitos Reservados</p>
+      </footer>
+    </section>
+  </body>
+</html>
