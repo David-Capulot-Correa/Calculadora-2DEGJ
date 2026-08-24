@@ -1,10 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Esse site é uma calculadora">
+    <title>Calculadora 2DEGJ</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
 <body>
+
     <header>
         <h1 id="cal2degj">Calculadora 2DEGJ</h1>
     </header>
 
     <main>
+
         <form id="calcForm">
+
             <label for="num1">Número 1:</label>
             <input type="number" id="num1" required>
 
@@ -16,6 +31,7 @@
             <br>
 
             <label for="operacao">Operação:</label>
+
             <select id="operacao">
                 <option value="soma">Soma</option>
                 <option value="subtracao">Diferença</option>
@@ -26,10 +42,67 @@
 
             <br>
 
-            <button type="button" onclick="calcular()">Calcular</button>
-            <button type="button" onclick="limpar()">Limpar</button>
+            <button type="button" onclick="calcular()">
+                Calcular
+            </button>
+
+            <button type="button" onclick="limpar()">
+                Limpar
+            </button>
+
         </form>
 
         <div id="resultado"></div>
+
     </main>
+
+    <footer>
+
+        <section id="dvs">
+
+            <strong>
+                <h2>Desenvolvedores</h2>
+            </strong>
+
+            <details>
+
+                <summary>Aperte Aqui</summary>
+
+                <br>
+
+                <p>Daniel Holanda</p>
+                <p>David Capulot</p>
+                <p>Eduardo Nespoli</p>
+                <p>Gabriel Fagundes</p>
+                <p>Julio Cesar</p>
+
+            </details>
+
+        </section>
+
+        <h3>Contatos dos Desenvolvedores</h3>
+
+        <br>
+
+        <p>Email: davidcapulot2025@gmail.com</p>
+        <p>Telefone: (21) 96520-1025</p>
+
+        <br>
+
+        <p>
+            <a href="https://github.com/DCapulot" target="_blank">
+                GitHub
+            </a>
+        </p>
+
+        <br>
+
+        <p>&copy; Todos os direitos reservados</p>
+
+    </footer>
+
+    <script src="script.js"></script>
+
 </body>
+
+</html>
