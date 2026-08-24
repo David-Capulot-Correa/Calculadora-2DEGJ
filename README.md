@@ -123,7 +123,7 @@ O botão **Limpar** remove os valores digitados nos campos e também apaga o res
 
 ## 🌐 Acesse o projeto
 
-🔗 **Site:** [COLOQUE_AQUI_O_LINK_DO_SITE](https://david-capulot-correa.github.io/Calculadora-2DEGJ/)
+🔗 **Site:** https://david-capulot-correa.github.io/Calculadora-2DEGJ/
 
 > 💡 Substitua o link acima pelo endereço onde o projeto estiver hospedado, como GitHub Pages, Vercel ou Netlify.
 
